@@ -1,4 +1,18 @@
 
+body {
+   background-color: #5D5C61;
+}
+
+.btn-primary {
+   background-color: #557A95;
+   border-color: #557A95;
+
+}
+
+.badge {
+   background-color: #7395AE;
+}
+
 .btn-light {
    background-color: #e9ecef;
    border-color: #868e96;
