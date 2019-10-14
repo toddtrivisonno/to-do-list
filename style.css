@@ -17,3 +17,9 @@ body {
    background-color: #e9ecef;
    border-color: #868e96;
 }
+
+/* input[type=checkbox]:checked + div.form-control.strikethrough {
+   text-decoration: line-through;
+ } */
+
+ 

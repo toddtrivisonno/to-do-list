@@ -1,24 +1,34 @@
 
+let itemsArr = [];
+
+
 /*--- Create List Item ---*/
 
 function addListItem() {
-   console.log('button clicked');
 
    let submission = document.getElementById('userInput').value;
 
+
    if (submission) {
 
-      // localStorage.setItem(itemNumber, submission);
+      localStorage.setItem('items', JSON.stringify(itemsArr));
+      let retrieve = JSON.parse(localStorage.getItem('items'));
+
+      itemsArr.push(submission);
+      localStorage.setItem('items', JSON.stringify(itemsArr));
 
       let listItem = document.createElement('li');
       listItem.className = "list-group-item";
-      // listItem.innerHTML = submission;
+
       let customCheckbox = document.createElement('div');
       customCheckbox.className = "input-group";
+
       let checkGroup = document.createElement('div');
       checkGroup.className = "input-group-text";
+
       let checkboxInput = document.createElement('input');
       checkboxInput.setAttribute('type', 'checkbox');
+
       let checkboxLabel = document.createElement('div');
       checkboxLabel.className = "form-control";
       checkboxLabel.innerHTML = submission;
@@ -28,7 +38,12 @@ function addListItem() {
       customCheckbox.appendChild(checkboxLabel);
       listItem.appendChild(customCheckbox);
       flushList.appendChild(listItem);
+
    }
+
+   
+
+   document.getElementById('userInput').value = "";
 }
 
 
